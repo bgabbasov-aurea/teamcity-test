@@ -1,11 +1,13 @@
 using ConsoleApp;
-using Xunit;
+using FluentAssertions;
+using NUnit.Framework;
 
 namespace Test
 {
+    [TestFixture]
     public class ProgramTest
     {
-        [Fact]
+        [Test]
         public void Sum()
         {
             var a = 2;
@@ -13,7 +15,7 @@ namespace Test
 
             var result = Program.Sum(a, b);
 
-            Assert.Equal(5, result);
+            result.Should().Be(5);
         }
     }
 }
